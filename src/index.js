@@ -1,22 +1,23 @@
-// Create a button and append to the body
-// The button will console.log a message
-// the console.log function should be imported from another module since this is the base module
-// Create an unordered list and the input from the message will append li's to that ul
-// console.log out the unordered list
+// Create a dialog element and append to the body
+// Form tag should be appended in the body
+// Within the form tag, there should be a text input, cancel button, and submit button
+// The input that is submitted should be outputted in the console
+// Need to find a way to grab the inputs from the form
 
 const body = document.querySelector('body');
 
 const ul = document.createElement('ul');
 
+const dialog = document.querySelector('dialog');
+
+const closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', () => {
+    dialog.close();
+})
+
 function sendMessage() {
-    let message = prompt('Enter a message to send', 'Hello!');
-
-    let li = document.createElement('li');
-    li.textContent = message;
-
-    ul.appendChild(li);
-
-    console.log(ul);
+    
+    dialog.showModal();
 
 }
 
